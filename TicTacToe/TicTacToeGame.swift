@@ -47,8 +47,8 @@ class TicTacToeGame {
         
         for row in fieldMatrix {
             flag = true
-            for column in row {
-                if column != player {
+            for columnInRow in row {
+                if columnInRow != player {
                     flag = false
                     break
                 }
@@ -63,15 +63,54 @@ class TicTacToeGame {
     }
     
     private func checkColumns(player: Int) -> Bool {
-        // TODO: checkColumns
+        var flag = true
         
-        return true
+        for column in fieldMatrix.indices {
+            flag = true
+            for indexInRow in fieldMatrix.indices {
+                if fieldMatrix[indexInRow][column] != player {
+                    flag = false
+                    break
+                }
+            }
+            
+            if flag == true {
+                return true
+            }
+        }
+        
+        return false
     }
     
     private func checkDiagonals(player: Int) -> Bool {
-        // TODO: checkDiagonals
+        var flag = true
         
-        return true
+        // checking first diagonal
+        for index in fieldMatrix.indices {
+            flag = true
+                if fieldMatrix[index][index] != player {
+                    flag = false
+                    break
+                }
+        }
+        if flag == true {
+            return true
+        }
+        
+        
+        // checking second diagonal
+        for index in fieldMatrix.indices {
+            flag = true
+            if fieldMatrix[index][(fieldMatrix.count-1) - index] != player {
+                flag = false
+                break
+            }
+        }
+        if flag == true {
+            return true
+        }
+        
+        return false
     }
     
     func checkField() -> Int {
