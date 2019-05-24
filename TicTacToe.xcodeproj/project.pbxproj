@@ -14,6 +14,7 @@
 		4E5C35AA2293F0B10089624C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E5C35A92293F0B10089624C /* Assets.xcassets */; };
 		4E5C35AD2293F0B10089624C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5C35AB2293F0B10089624C /* LaunchScreen.storyboard */; };
 		4E68C00A2296EDB400FB912F /* BeforeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E68C0092296EDB400FB912F /* BeforeGameViewController.swift */; };
+		4E944AED22989A2E001A8520 /* AfterGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944AEC22989A2E001A8520 /* AfterGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4E5C35AC2293F0B10089624C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E5C35AE2293F0B10089624C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E68C0092296EDB400FB912F /* BeforeGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeGameViewController.swift; sourceTree = "<group>"; };
+		4E944AEC22989A2E001A8520 /* AfterGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				4E5C35AE2293F0B10089624C /* Info.plist */,
+				4E944AEC22989A2E001A8520 /* AfterGameViewController.swift */,
 				4E5C35A22293F0AF0089624C /* AppDelegate.swift */,
 				4E68C0092296EDB400FB912F /* BeforeGameViewController.swift */,
-				4E1499DA2293FEC0001A0371 /* TicTacToeGame.swift */,
 				4E5C35A42293F0AF0089624C /* GameViewController.swift */,
+				4E1499DA2293FEC0001A0371 /* TicTacToeGame.swift */,
 				4E5C35A92293F0B10089624C /* Assets.xcassets */,
 				4E5C35AB2293F0B10089624C /* LaunchScreen.storyboard */,
 				4E5C35A62293F0AF0089624C /* Main.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E5C35A52293F0AF0089624C /* GameViewController.swift in Sources */,
+				4E944AED22989A2E001A8520 /* AfterGameViewController.swift in Sources */,
 				4E68C00A2296EDB400FB912F /* BeforeGameViewController.swift in Sources */,
 				4E5C35A32293F0AF0089624C /* AppDelegate.swift in Sources */,
 				4E1499DB2293FEC0001A0371 /* TicTacToeGame.swift in Sources */,
