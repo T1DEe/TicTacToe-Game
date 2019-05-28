@@ -1,25 +1,24 @@
-//
-//  AfterGameViewController.swift
-//  TicTacToe
-//
-//  Created by Artemy Markovsky on 5/25/19.
-//  Copyright © 2019 ArtemyMarkovsky. All rights reserved.
-//
 
 import UIKit
 
 class AfterGameViewController: UIViewController {
 
-    @IBOutlet weak var winLabel: UILabel!
+    @IBOutlet private weak var winLabel: UILabel!
+    @IBOutlet private weak var winnerImage: UIImageView!
     
+    var gameStatus: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func newGameButtonAction(_ sender: UIButton) {
         
+        switch gameStatus! {
+        case 0:
+            winLabel.text = "DRAW!"
+        case 1,2:
+            winLabel.text = "Player \(gameStatus!) WON!"
+            winnerImage.image = UIImage(named: "\(gameStatus!)")
+        default:
+            break
+        }
     }
 }

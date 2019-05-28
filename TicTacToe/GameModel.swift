@@ -1,10 +1,11 @@
 
 import Foundation
 
-class TicTacToeGame {
-    private let fieldSize: Int
-    private var fieldMatrix: [[Int]]
-    private(set) var currentPlayer: Int
+class GameModel {
+    let fieldSize: Int
+    var fieldMatrix: [[Int]]
+    var currentPlayer: Int
+    var gameStatus: Int?
     
     init(fieldSize: Int) {
         self.fieldSize = fieldSize
@@ -24,7 +25,7 @@ class TicTacToeGame {
         return false
     }
     
-    private func move(row: Int, column: Int) -> Bool {
+    func move(row: Int, column: Int) -> Bool {
         if fieldMatrix[row][column] == 0 {
             fieldMatrix[row][column] = currentPlayer
             return true
@@ -32,7 +33,7 @@ class TicTacToeGame {
         return false
     }
     
-    private func changeTurn() -> Int {
+    func changeTurn() -> Int {
         if currentPlayer == 1 {
             currentPlayer = 2
         } else {
@@ -97,7 +98,6 @@ class TicTacToeGame {
             return true
         }
         
-        
         // checking second diagonal
         for index in fieldMatrix.indices {
             flag = true
@@ -113,13 +113,13 @@ class TicTacToeGame {
         return false
     }
     
-    func checkField() -> Int {
+    func checkField() {
         if checkRows(player: currentPlayer) || checkColumns(player: currentPlayer) || checkDiagonals(player: currentPlayer) {
-            return currentPlayer
+            gameStatus = currentPlayer
         } else if isHaveMove() == false {
-            return 0
+            gameStatus = 0
         } else {
-            return -1
+            gameStatus = -1
         }
     }
 }

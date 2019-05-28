@@ -1,10 +1,3 @@
-//
-//  BeforeGameViewController.swift
-//  TicTacToe
-//
-//  Created by Artemy Markovsky on 5/23/19.
-//  Copyright © 2019 ArtemyMarkovsky. All rights reserved.
-//
 
 import UIKit
 
@@ -33,7 +26,10 @@ class BeforeGameViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dvc = segue.destination as! GameViewController
+        let dvc = segue.destination as! MainViewController
         dvc.fieldSizeFromSegue = sizeToSegue!
+    }
+    
+    @IBAction func unwindToStart(_ sender: UIStoryboardSegue) {
     }
 }
