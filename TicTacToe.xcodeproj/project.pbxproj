@@ -14,6 +14,7 @@
 		4E5C35A82293F0AF0089624C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5C35A62293F0AF0089624C /* Main.storyboard */; };
 		4E5C35AD2293F0B10089624C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5C35AB2293F0B10089624C /* LaunchScreen.storyboard */; };
 		4E68C00A2296EDB400FB912F /* BeforeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E68C0092296EDB400FB912F /* BeforeGameViewController.swift */; };
+		4E8C32B122A24C0000A51A2F /* FieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C32B022A24C0000A51A2F /* FieldButton.swift */; };
 		4E944AED22989A2E001A8520 /* AfterGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944AEC22989A2E001A8520 /* AfterGameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		4E5C35AC2293F0B10089624C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E5C35AE2293F0B10089624C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E68C0092296EDB400FB912F /* BeforeGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeGameViewController.swift; sourceTree = "<group>"; };
+		4E8C32B022A24C0000A51A2F /* FieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldButton.swift; sourceTree = "<group>"; };
 		4E944AEC22989A2E001A8520 /* AfterGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,8 +66,9 @@
 				4E944AEC22989A2E001A8520 /* AfterGameViewController.swift */,
 				4E5C35A22293F0AF0089624C /* AppDelegate.swift */,
 				4E68C0092296EDB400FB912F /* BeforeGameViewController.swift */,
-				4E5C35A42293F0AF0089624C /* MainViewController.swift */,
+				4E8C32B022A24C0000A51A2F /* FieldButton.swift */,
 				4E1499DA2293FEC0001A0371 /* GameModel.swift */,
+				4E5C35A42293F0AF0089624C /* MainViewController.swift */,
 				4E5175EE229975B70025798C /* Assets.xcassets */,
 				4E5C35AB2293F0B10089624C /* LaunchScreen.storyboard */,
 				4E5C35A62293F0AF0089624C /* Main.storyboard */,
@@ -148,6 +151,7 @@
 				4E944AED22989A2E001A8520 /* AfterGameViewController.swift in Sources */,
 				4E68C00A2296EDB400FB912F /* BeforeGameViewController.swift in Sources */,
 				4E5C35A32293F0AF0089624C /* AppDelegate.swift in Sources */,
+				4E8C32B122A24C0000A51A2F /* FieldButton.swift in Sources */,
 				4E1499DB2293FEC0001A0371 /* GameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 726V7J6M2J;
 				INFOPLIST_FILE = TicTacToe/Info.plist;
@@ -312,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 726V7J6M2J;
 				INFOPLIST_FILE = TicTacToe/Info.plist;

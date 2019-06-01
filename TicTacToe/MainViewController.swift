@@ -6,17 +6,31 @@ class MainViewController: UIViewController {
     var fieldSizeFromSegue = 0
     var game: GameModel?
     
+    var mainStackView = UIStackView()
+    var subStackViewsArray: [UIStackView] = []
+    var fieldButtonsArray: [[FieldButton]] = []
+    
     @IBOutlet weak var playerTurnTextField: UILabel!
     
-
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         game = GameModel(fieldSize: fieldSizeFromSegue)
-        // TODO: generate game field on screen
+        // generating game field on screen
+        generateFieldButtons()
+        generateSubStackViews()
+        mainStackViewLayoutSetup()
+        subStackViewsLayoutSetup()
+        for item in subStackViewsArray {
+            mainStackView.addArrangedSubview(item)
+        }
+        
     }
     
     
+    // MARK: Controller functionality
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     @IBAction func moveButtonAction(_ sender: UIButton) {
         let str = sender.restorationIdentifier!
         let row = Int(String(str.first!))
@@ -37,16 +51,66 @@ class MainViewController: UIViewController {
         
     }
     
-    
     func changeTurn() {
         let player = game!.changeTurn()
         playerTurnTextField.text = "Player \(player) turn"
     }
     
+    func generateFieldButtons() {
+        for i in 0..<fieldSizeFromSegue {
+            var subArray: [FieldButton] = []
+            for j in 0..<fieldSizeFromSegue {
+                let newButton: FieldButton = {
+                    let button = FieldButton()
+                    button.restorationIdentifier = "\(i)\(j)"
+                    button.addTarget(self, action: #selector(moveButtonAction(_:)), for: .touchUpInside)
+                    return button
+                }()
+                subArray.append(newButton)
+            }
+            fieldButtonsArray.append(subArray)
+        }
+    }
     
+    func generateSubStackViews() {
+        for i in 0..<fieldSizeFromSegue {
+            let subStackView = UIStackView(arrangedSubviews: fieldButtonsArray[i])
+            subStackViewsArray.append(subStackView)
+        }
+    }
+    
+    
+    // MARK: Segues
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as! AfterGameViewController
         dvc.gameStatus = game!.gameStatus
+    }
+    
+    
+    // MARK: Layout setups
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    func mainStackViewLayoutSetup() {
+        view.addSubview(mainStackView)
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        mainStackView.axis = .vertical
+        mainStackView.distribution = .fillEqually
+        mainStackView.alignment = .fill
+        
+        mainStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
+        mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+        mainStackView.heightAnchor.constraint(equalTo: mainStackView.widthAnchor, multiplier: 1).isActive = true
+    }
+    
+    func subStackViewsLayoutSetup() {
+        for stackView in subStackViewsArray {
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            stackView.axis = .horizontal
+            stackView.distribution = .fillEqually
+            stackView.alignment = .fill
+        }
     }
 }
 
