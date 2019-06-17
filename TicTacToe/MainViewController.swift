@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
         generateSubStackViews()
         mainStackViewLayoutSetup()
         subStackViewsLayoutSetup()
+        playerTurnTextFieldLayoutSetup()
         for item in subStackViewsArray {
             mainStackView.addArrangedSubview(item)
         }
@@ -90,6 +91,10 @@ class MainViewController: UIViewController {
     
     // MARK: Layout setups
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    func playerTurnTextFieldLayoutSetup() {
+        playerTurnTextField.bottomAnchor.constraint(equalTo: mainStackView.topAnchor, constant: -60).isActive = true
+    }
+    
     func mainStackViewLayoutSetup() {
         view.addSubview(mainStackView)
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -99,8 +104,8 @@ class MainViewController: UIViewController {
         
         mainStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
-        mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+        
+        mainStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
         mainStackView.heightAnchor.constraint(equalTo: mainStackView.widthAnchor, multiplier: 1).isActive = true
     }
     
